@@ -26,7 +26,6 @@ class SimpleBrowser(QWidget):
 
         self.browser = QWebEngineView()
 
-        # If custom icon is provided, set it; else, icon will be updated upon webpage load
         if self.icon_path:
             self.setWindowIcon(QIcon(self.icon_path))
         else:
@@ -93,8 +92,7 @@ class SimpleBrowser(QWidget):
         self.dialog = QDialog(self)
         self.dialog.setWindowTitle("Historial de Descargas")
         
-        # Establecer el tamaño de la ventana de historial de descargas
-        self.dialog.resize(500, 300)  # Ajusta el tamaño según tus necesidades
+        self.dialog.resize(500, 300)
         
         self.layout = QVBoxLayout()
         
@@ -138,14 +136,14 @@ class SimpleBrowser(QWidget):
         if index >= 0 and index < len(downloads):
             download_path = downloads[index]["download_path"]
             if os.path.exists(download_path):
-                os.system(f"xdg-open '{download_path}'")  # Open file in default application
+                os.system(f"xdg-open '{download_path}'") 
 
     def open_selected_download_folder(self, index, downloads):
         if index >= 0 and index < len(downloads):
             download_path = downloads[index]["download_path"]
             folder_path = os.path.dirname(download_path)
             if os.path.exists(folder_path):
-                os.system(f"xdg-open '{folder_path}'")  # Open folder in default file manager
+                os.system(f"xdg-open '{folder_path}'") 
 
     def confirm_delete_download_history(self):
         reply = QMessageBox.question(self, 'Confirmar Borrado', 
@@ -158,7 +156,7 @@ class SimpleBrowser(QWidget):
         if os.path.exists(CONFIG_FILE):
             os.remove(CONFIG_FILE)
             QMessageBox.information(self, "Historial de Descargas", "El historial de descargas ha sido borrado.", QMessageBox.Ok, QMessageBox.Ok)
-            self.load_download_history()  # Reload the download list to reflect changes
+            self.load_download_history()  
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)

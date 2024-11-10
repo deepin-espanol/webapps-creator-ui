@@ -1,18 +1,17 @@
 #!/bin/bash
 
-# Verificar si pkexec est¨¢ instalado
+# Verificar pkexec
 if ! command -v pkexec &> /dev/null; then
-    echo "Se requiere pkexec pero no est¨¢ instalado. Instale pkexec e int¨¦ntelo de nuevo."
+    echo "Se requiere pkexec pero no estÂ¨Â¢ instalado. Instale pkexec e intÂ¨Â¦ntelo de nuevo."
     exit 1
 fi
 
-# Obtenemos el valor de la distribuci¨®n con el comando lsb_release
 distribucion=$(lsb_release -s --d)
 
-echo "Verificando la versi¨®n del sistema..."
+echo "Verificando la versiÂ¨Â®n del sistema..."
 
 if [[ "$distribucion" == "Deepin 23" ]]; then
-    echo "Asignando soluci¨®n para deepin23"
+    echo "Asignando soluciÂ¨Â®n para deepin23"
     pkexec sed -i 's/config\.write(desktop_file)/config\.write(desktop_file, space_around_delimiters=False)/' /usr/bin/webapps-creator-ui/webapps-creator-ui.py
     python3 /usr/bin/webapps-creator-ui/webapps-creator-ui.py
 else

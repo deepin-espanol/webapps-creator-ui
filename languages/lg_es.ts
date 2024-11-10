@@ -1,158 +1,155 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="es">
+<TS version="2.1">
 <context>
     <name>WebAppCreator</name>
     <message>
-        <location filename="../webapps-creator-ui.py" line="68"/>
-        <source>Bienvenido a WebApps Creator!</source>
-        <translation type="unfinished">Bienvenido a WebApps Creator!</translation>
+        <location filename="webapps-creator-ui.py" line="70"/>
+        <source>¡Bienvenido a WebApps Creator!</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../webapps-creator-ui.py" line="70"/>
+        <location filename="webapps-creator-ui.py" line="72"/>
         <source>Selecciona tu idioma:</source>
-        <translation type="unfinished">Selecciona tu idioma:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../webapps-creator-ui.py" line="84"/>
+        <location filename="webapps-creator-ui.py" line="86"/>
         <source>Guardar y continuar</source>
-        <translation type="unfinished">Guardar y continuar</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../webapps-creator-ui.py" line="94"/>
+        <location filename="webapps-creator-ui.py" line="94"/>
         <source>Creador de WebApps</source>
-        <translation type="unfinished">Creador de WebApps</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../webapps-creator-ui.py" line="106"/>
+        <location filename="webapps-creator-ui.py" line="105"/>
         <source>Crear</source>
-        <translation type="unfinished">Crear</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../webapps-creator-ui.py" line="107"/>
+        <location filename="webapps-creator-ui.py" line="106"/>
         <source>Crear una nueva WebApp</source>
-        <translation type="unfinished">Crear una nueva WebApp</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../webapps-creator-ui.py" line="112"/>
+        <location filename="webapps-creator-ui.py" line="111"/>
         <source>Listar</source>
-        <translation type="unfinished">Listar</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../webapps-creator-ui.py" line="113"/>
+        <location filename="webapps-creator-ui.py" line="112"/>
         <source>Listar WebApps existentes</source>
-        <translation type="unfinished">Listar WebApps existentes</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../webapps-creator-ui.py" line="118"/>
+        <location filename="webapps-creator-ui.py" line="117"/>
         <source>Ayuda</source>
-        <translation type="unfinished">Ayuda</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../webapps-creator-ui.py" line="119"/>
+        <location filename="webapps-creator-ui.py" line="118"/>
         <source>Ver la ayuda del programa</source>
-        <translation type="unfinished">Ver la ayuda del programa</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../webapps-creator-ui.py" line="124"/>
+        <location filename="webapps-creator-ui.py" line="123"/>
         <source>Acerca de</source>
-        <translation type="unfinished">Acerca de</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../webapps-creator-ui.py" line="125"/>
+        <location filename="webapps-creator-ui.py" line="124"/>
         <source>Acerca de WebApps Creator UI</source>
-        <translation type="unfinished">Acerca de WebApps Creator UI</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../webapps-creator-ui.py" line="143"/>
+        <location filename="webapps-creator-ui.py" line="138"/>
         <source>Nombre de la WebApp:</source>
-        <translation type="unfinished">Nombre de la WebApp:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../webapps-creator-ui.py" line="149"/>
+        <location filename="webapps-creator-ui.py" line="144"/>
         <source>URL de la WebApp ( formato https:// ):</source>
-        <translation type="unfinished">URL de la WebApp ( formato https:// ):</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../webapps-creator-ui.py" line="155"/>
+        <location filename="webapps-creator-ui.py" line="150"/>
         <source>Categoría de la WebApp:</source>
-        <translation type="unfinished">Categoría de la WebApp:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../webapps-creator-ui.py" line="164"/>
+        <location filename="webapps-creator-ui.py" line="159"/>
         <source>Ícono de la WebApp:</source>
-        <translation type="unfinished">Ícono de la WebApp:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../webapps-creator-ui.py" line="212"/>
+        <location filename="webapps-creator-ui.py" line="207"/>
         <source>Seleccionar ícono</source>
-        <translation type="unfinished">Seleccionar ícono</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../webapps-creator-ui.py" line="174"/>
+        <location filename="webapps-creator-ui.py" line="169"/>
         <source>Navegador a utilizar:</source>
-        <translation type="unfinished">Navegador a utilizar:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../webapps-creator-ui.py" line="188"/>
+        <location filename="webapps-creator-ui.py" line="184"/>
         <source>Crear WebApp</source>
-        <translation type="unfinished">Crear WebApp</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../webapps-creator-ui.py" line="202"/>
+        <location filename="webapps-creator-ui.py" line="197"/>
         <source>Eliminar WebApp seleccionada</source>
-        <translation type="unfinished">Eliminar WebApp seleccionada</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../webapps-creator-ui.py" line="212"/>
+        <location filename="webapps-creator-ui.py" line="207"/>
         <source>Imágenes (*.png *.xpm *.jpg *.bmp);;Todos los archivos (*)</source>
-        <translation type="unfinished">Imágenes (*.png *.xpm *.jpg *.bmp);;Todos los archivos (*)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../webapps-creator-ui.py" line="259"/>
+        <location filename="webapps-creator-ui.py" line="249"/>
         <source>Campos faltantes</source>
-        <translation type="unfinished">Campos faltantes</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../webapps-creator-ui.py" line="259"/>
+        <location filename="webapps-creator-ui.py" line="249"/>
         <source>Por favor, asegúrese de ingresar el nombre, la URL y seleccionar un ícono para la WebApp.</source>
-        <translation type="unfinished">Por favor, asegúrese de ingresar el nombre, la URL y seleccionar un ícono para la WebApp.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../webapps-creator-ui.py" line="282"/>
-        <source>WebApp creada</source>
-        <translation type="unfinished">WebApp creada</translation>
+        <location filename="webapps-creator-ui.py" line="272"/>
+        <source>WebApp creada con exito</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../webapps-creator-ui.py" line="282"/>
+        <location filename="webapps-creator-ui.py" line="272"/>
         <source>WebApp creada y guardada en {0}</source>
-        <translation type="unfinished">WebApp creada y guardada en {0}</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../webapps-creator-ui.py" line="327"/>
+        <location filename="webapps-creator-ui.py" line="314"/>
         <source>WebApps Creator UI - Ayuda</source>
-        <translation type="unfinished">WebApps Creator UI - Ayuda</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../webapps-creator-ui.py" line="365"/>
+        <location filename="webapps-creator-ui.py" line="352"/>
         <source>Cerrar</source>
-        <translation type="unfinished">Cerrar</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../webapps-creator-ui.py" line="373"/>
-        <source>Webapps Creator UI v1.3.1
-Desarrollado por krafairus
+        <location filename="webapps-creator-ui.py" line="360"/>
+        <source>Webapps Creator UI v1.4.0
+Desarrollado por krafairus - Equipo Deepines
 Más información en:
-https://github.com/krafairus/webapps-creator-ui</source>
-        <translation type="unfinished">Webapps Creator UI v1.3.1
-Desarrollado por krafairus
-Más información en:
-https://github.com/krafairus/webapps-creator-ui</translation>
+https://github.com/deepin-espanol/webapps-creator-ui</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../webapps-creator-ui.py" line="379"/>
+        <location filename="webapps-creator-ui.py" line="366"/>
         <source>Acerca de Webapps Creator UI</source>
-        <translation type="unfinished">Acerca de Webapps Creator UI</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>
