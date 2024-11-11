@@ -1,0 +1,22 @@
+Source: webapps-creator-ui
+Section: utils
+Priority: optional
+Maintainer: krafairus <krafairuspc@gmail.com>
+Uploaders:
+ Amaro Martínez <xoas@airmail.cc>,
+Build-Depends:
+ debhelper-compat (= 13),
+Standards-Version: 4.5.0
+Homepage: https://github.com/deepin-espanol/webapps-creator-ui
+
+Package: webapps-creator-ui
+Architecture: all
+Depends:
+ python3-pyqt5,
+ python3-pyqt5.qtwebengine,
+ ${misc:Depends}
+ python3,
+ ${shlibs:Depends},
+Description: Create webapps in a graphic and simple way
+ Provides a graphical user interface to create web applications easily.
+ It leverages Python and PyQt5 to offer a user-friendly experience.

@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=WebApps Creator
+Name[es]=Creador de WebApps
+Name[pt_BR]=Criador de WebApps
+Comment=Create WebApps in a simple and graphical way.
+Comment[es]=Crear WebApps de forma gráfica y sencilla.
+Comment[pt_BR]=Criar WebApps de forma gráfica e simples.
+Exec=/usr/bin/webapps-creator-ui/webapps-creator-ui
+Icon=webapps-creator-ui
+StartupWMClass=webapps-creator-ui
+Type=Application
+Categories=System;

@@ -1,19 +1,9 @@
-#!/bin/bash
+#!/bin/sh
 
-# Verificar pkexec
-if ! command -v pkexec &> /dev/null; then
-    echo "Se requiere pkexec pero no est¨¢ instalado. Instale pkexec e int¨¦ntelo de nuevo."
-    exit 1
+# Verificar si pkexec está instalado
+if ! command -v pkexec > /dev/null 2>&1; then
+	echo "Se requiere pkexec pero no está instalado. Instale pkexec e inténtelo de nuevo."
+	exit 1
 fi
 
-distribucion=$(lsb_release -s --d)
-
-echo "Verificando la versi¨®n del sistema..."
-
-if [[ "$distribucion" == "Deepin 23" ]]; then
-    echo "Asignando soluci¨®n para deepin23"
-    pkexec sed -i 's/config\.write(desktop_file)/config\.write(desktop_file, space_around_delimiters=False)/' /usr/bin/webapps-creator-ui/webapps-creator-ui.py
-    python3 /usr/bin/webapps-creator-ui/webapps-creator-ui.py
-else
-    pkexec python3 /usr/bin/webapps-creator-ui/webapps-creator-ui.py
-fi
+pkexec python3 /usr/bin/webapps-creator-ui/webapps-creator-ui.py

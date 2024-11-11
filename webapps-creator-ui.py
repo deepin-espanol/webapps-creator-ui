@@ -5,9 +5,9 @@ import sys
 import configparser
 import json
 from PyQt5.QtWidgets import (QApplication, QMainWindow, QVBoxLayout, QLabel, QLineEdit, QPushButton, QComboBox, QFileDialog, QMessageBox, QDialog, QTextBrowser, QVBoxLayout, QWidget, QToolBar, QAction, QStackedWidget, QListWidget, QListWidgetItem)
-from PyQt5.QtGui import QIcon, QPixmap
+from PyQt5.QtGui import QIcon
 from PyQt5.QtCore import Qt, QTranslator, QLocale
-from PyQt5.QtGui import QPixmap, QPainter, QColor
+from PyQt5.QtGui import QPainter, QColor
 
 LOG_FILE = os.path.expanduser('~/.webapps-creator-ui/webapp_log.txt')
 CONFIG_FILE = os.path.expanduser('~/.webapps-creator-ui/config.json')
