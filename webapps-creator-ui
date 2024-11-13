@@ -1,9 +1,37 @@
-#!/bin/sh
+#!/bin/bash
 
-# Verificar si pkexec está instalado
-if ! command -v pkexec > /dev/null 2>&1; then
-	echo "Se requiere pkexec pero no está instalado. Instale pkexec e inténtelo de nuevo."
-	exit 1
+# Función para pedir la contraseña usando zenity
+ask_password() {
+    password=$(zenity --password --title="Solucionar Errores en Deeppin 23" --text="Por favor, ingresa tu contraseña de sudo:")
+    if [ $? -ne 0 ]; then
+        echo "Cancelado por el usuario"
+        exit 1
+    fi
+}
+
+# Verificar si zenity está instalado
+if ! command -v zenity &> /dev/null; then
+    echo "Zenity no está instalado. Instálalo para continuar."
+    exit 1
 fi
 
-pkexec python3 /usr/bin/webapps-creator-ui/webapps-creator-ui.py
+# Llamar a la función para pedir la contraseña
+ask_password
+
+# Verificar la distribución de Linux
+distribucion=$(lsb_release -s --d)
+
+# Ruta del script a ejecutar
+script_path="/usr/bin/webapps-creator-ui/webapps-creator-ui.py"
+
+# Si la distribución es Deepin 23, aplicar el cambio con sed
+if [[ "$distribucion" == "Deepin 23" ]]; then
+    echo "Asignando solución para Deepin 23"
+    echo "$password" | sudo -S sed -i 's/config\.write(desktop_file)/config\.write(desktop_file, space_around_delimiters=False)/' "$script_path"
+fi
+
+# Ejecutar el script de Python sin sudo, ya que no lo necesita
+python3 "$script_path"
+
+# Cerrar el script
+exit 0
