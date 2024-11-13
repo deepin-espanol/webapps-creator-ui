@@ -358,7 +358,7 @@ class WebAppCreator(QMainWindow):
 
     def show_about(self):
         about_text = self.tr(
-            "Webapps Creator UI v1.4.0\n"
+            "Webapps Creator UI v1.4.5\n"
             "Desarrollado por krafairus - Equipo Deepines\n"
             "Más información en:\n"
             "https://github.com/deepin-espanol/webapps-creator-ui"
