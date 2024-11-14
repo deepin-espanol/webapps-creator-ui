@@ -30,7 +30,7 @@ script_path="/usr/bin/webapps-creator-ui/webapps-creator-ui.py"
 
 if [[ "$distribucion" == "Deepin 23" ]]; then
     echo "Asignando solución para Deepin 23"
-    ask_password  # Pedir la contraseña solo si es Deepin 23
+    ask_password 
     echo "$password" | sudo -S sed -i 's/config\.write(desktop_file)/config\.write(desktop_file, space_around_delimiters=False)/' "$script_path"
 fi
 
