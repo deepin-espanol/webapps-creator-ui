@@ -17,16 +17,6 @@ Depends:
   ${misc:Depends},
   python3,
   ${shlibs:Depends},
-  qt5dxcb-plugin,
-  xcb,
-  qt5-qmake,
-  qtbase5-dev,
-  qtchooser,
-  qtbase5-dev-tools,
-  libxcb-xinerama0,
-  libqt5core5a,
-  libqt5gui5,
-  libqt5widgets5,
   zenity
 Description: Create webapps in a graphic and simple way
  Provides a graphical user interface to create web applications easily.
