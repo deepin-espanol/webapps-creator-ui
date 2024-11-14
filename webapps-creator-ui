@@ -1,11 +1,22 @@
 #!/bin/bash
 
 ask_password() {
-    password=$(zenity --password --title="Solucionar Errores en Deeppin 23" --text="Por favor, ingresa tu contraseña de sudo:")
-    if [ $? -ne 0 ]; then
-        echo "Cancelado por el usuario"
-        exit 1
-    fi
+    while true; do
+        password=$(zenity --password --title="Autenticación de sudo" --text="Por favor, ingresa tu contraseña de sudo:")
+        
+        if [ $? -ne 0 ]; then
+            echo "Cancelado por el usuario"
+            exit 1
+        fi
+        
+        echo "$password" | sudo -S echo "" &>/dev/null
+        
+        if [ $? -eq 0 ]; then
+            break  
+        else
+            zenity --error --text="Error al aplicar la solución a Deepin 23 \nContraseña incorrecta. \nIngresa correctamente la clave sudo."
+        fi
+    done
 }
 
 if ! command -v zenity &> /dev/null; then
@@ -13,14 +24,13 @@ if ! command -v zenity &> /dev/null; then
     exit 1
 fi
 
-ask_password
-
 distribucion=$(lsb_release -s --d)
 
 script_path="/usr/bin/webapps-creator-ui/webapps-creator-ui.py"
 
 if [[ "$distribucion" == "Deepin 23" ]]; then
     echo "Asignando solución para Deepin 23"
+    ask_password  # Pedir la contraseña solo si es Deepin 23
     echo "$password" | sudo -S sed -i 's/config\.write(desktop_file)/config\.write(desktop_file, space_around_delimiters=False)/' "$script_path"
 fi
 
