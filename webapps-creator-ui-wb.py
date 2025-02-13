@@ -4,16 +4,16 @@
 import sys
 import os
 import json
-from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QPushButton, QFileDialog, QMessageBox, QListWidget, QDialog, QHBoxLayout
+from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget, QVBoxLayout, QPushButton, QFileDialog, QMessageBox, QListWidget, QDialog, QHBoxLayout
 from PyQt5.QtWebEngineWidgets import QWebEngineView
-from PyQt5.QtGui import QIcon
-from PyQt5.QtCore import QUrl
+from PyQt5.QtGui import QIcon, QColor, QPainter
+from PyQt5.QtCore import QUrl, Qt, QSize
 from PyQt5.QtDBus import QDBusInterface
 
 CONFIG_DIR = os.path.expanduser("~/.wbrowserconfig")
 CONFIG_FILE = os.path.join(CONFIG_DIR, "downloads.json")
 
-class SimpleBrowser(QWidget):
+class SimpleBrowser(QMainWindow):  # Cambia QWidget a QMainWindow
     def __init__(self, url, icon_path=None):
         super().__init__()
         self.url = url
@@ -22,6 +22,9 @@ class SimpleBrowser(QWidget):
         self.load_start_url()
 
     def initUI(self):
+
+        self.setWindowFlags(Qt.FramelessWindowHint)  # Eliminar la barra de título del sistema
+
         layout = QVBoxLayout()
 
         self.browser = QWebEngineView()
@@ -31,18 +34,16 @@ class SimpleBrowser(QWidget):
         else:
             self.browser.iconChanged.connect(self.update_window_icon)
 
-        self.btnInicio = QPushButton(QIcon.fromTheme("go-home"), 'Inicio', self)
-        self.btnInicio.clicked.connect(self.load_start_url)
-        
-        self.btnDescargas = QPushButton(QIcon.fromTheme("folder-download"), "Descargas", self)
-        self.btnDescargas.clicked.connect(self.show_download_history)
+        # Crear la barra de título personalizada
+        self.create_custom_title_bar()
 
-        layout.addWidget(self.browser)
-        
-        button_layout = QHBoxLayout()
-        button_layout.addWidget(self.btnInicio)
-        button_layout.addWidget(self.btnDescargas)
-        layout.addLayout(button_layout)
+        # Widget central y layout principal
+        self.central_widget = QWidget()
+        main_layout = QVBoxLayout(self.central_widget)
+        self.setCentralWidget(self.central_widget)
+
+        # Agregar el navegador web al layout
+        main_layout.addWidget(self.browser)
 
         self.setLayout(layout)
 
@@ -157,6 +158,128 @@ class SimpleBrowser(QWidget):
             os.remove(CONFIG_FILE)
             QMessageBox.information(self, "Historial de Descargas", "El historial de descargas ha sido borrado.", QMessageBox.Ok, QMessageBox.Ok)
             self.load_download_history()  
+
+    def create_custom_title_bar(self):
+        """Crea una barra de título personalizada."""
+        self.title_bar = QWidget(self)
+        self.title_bar.setFixedHeight(40)  # Hacer la barra de título más gruesa
+        self.title_bar.setObjectName("title_bar")  # Asignar un nombre de objeto para aplicar estilos
+        self.title_bar.setStyleSheet("background-color: #262626; border-bottom: 1px solid #333333;")
+
+        # Layout horizontal para la barra de título
+        title_layout = QHBoxLayout(self.title_bar)
+        title_layout.setContentsMargins(10, 0, 10, 0)
+        title_layout.setSpacing(0)
+
+        # Botones de la barra de título
+        celeste_color = QColor(0, 184, 255)
+
+        # Cargar archivos PNG para los iconos
+        home_icon = QIcon("/usr/bin/webapps-creator-ui/icons/home.png")  # Reemplaza "path/to/home_icon.png" con la ruta correcta
+        download_icon = QIcon("/usr/bin/webapps-creator-ui/icons/downloads.png")  # Reemplaza "path/to/download_icon.png" con la ruta correcta
+
+        # Botón de Inicio (con icono)
+        self.btnInicio = QPushButton(home_icon, "", self)  # Usar home_icon
+        self.btnInicio.setIconSize(QSize(32, 32))  # Establecer el tamaño del icono
+        self.btnInicio.clicked.connect(self.load_start_url)
+        self.btnInicio.setToolTip("Inicio")
+        self.btnInicio.setStyleSheet("""
+            QPushButton {
+                background-color: transparent;
+                border: none;
+                padding: 5px;
+            }
+            QPushButton:hover {
+                background-color: #4A4A4A;
+            }
+        """)
+
+        # Botón de Descargas (con icono)
+        self.btnDescargas = QPushButton(download_icon, "", self)  # Usar download_icon
+        self.btnDescargas.setIconSize(QSize(32, 32))  # Establecer el tamaño del icono
+        self.btnDescargas.clicked.connect(self.show_download_history)
+        self.btnDescargas.setToolTip("Descargas")
+        self.btnDescargas.setStyleSheet("""
+            QPushButton {
+                background-color: transparent;
+                border: none;
+                padding: 5px;
+            }
+            QPushButton:hover {
+                background-color: #4A4A4A;
+            }
+        """)
+
+        # Botón de minimizar
+        minimize_button = QPushButton("─")
+        minimize_button.setFixedSize(40, 40)
+        minimize_button.setStyleSheet("""
+            QPushButton {
+                background-color: transparent;
+                color: #BEBEBE;
+                font-size: 16px;
+                border: none; /* Eliminar borde */
+                border-radius: 0px; /* Eliminar bordes redondeados */
+            }
+            QPushButton:hover {
+                background-color: #4A4A4A;
+            }
+            QPushButton:pressed {
+                background-color: #323232;
+            }
+        """)
+        minimize_button.clicked.connect(self.showMinimized)
+
+        # Botón de cerrar
+        close_button = QPushButton("✕")
+        close_button.setFixedSize(40, 40)
+        close_button.setStyleSheet("""
+            QPushButton {
+                background-color: transparent;
+                color: #BEBEBE;
+                font-size: 16px;
+                border: none; /* Eliminar borde */
+                border-radius: 0px; /* Eliminar bordes redondeados */
+            }
+            QPushButton:hover {
+                background-color: #4A4A4A;
+            }
+            QPushButton:pressed {
+                background-color: #323232;
+            }
+        """)
+        close_button.clicked.connect(self.close)
+
+        # Añadir botones a la barra de título
+        title_layout.addWidget(self.btnInicio)
+        title_layout.addWidget(self.btnDescargas)
+        title_layout.addStretch()
+        title_layout.addWidget(minimize_button)
+        title_layout.addWidget(close_button)
+
+        # Establecer la barra de título personalizada
+        self.setMenuWidget(self.title_bar)  # Ahora funciona porque SimpleBrowser es QMainWindow
+
+    # Funcionalidad para mover la ventana
+    def mousePressEvent(self, event):
+        if event.button() == Qt.LeftButton and self.title_bar.underMouse():
+            self.dragging = True
+            self.offset = event.globalPos() - self.pos()
+
+    def mouseMoveEvent(self, event):
+        if self.dragging:
+            self.move(event.globalPos() - self.offset)
+
+    def mouseReleaseEvent(self, event):
+        if event.button() == Qt.LeftButton:
+            self.dragging = False
+
+    def mouseDoubleClickEvent(self, event):
+        if event.button() == Qt.LeftButton and self.title_bar.underMouse():
+            if self.isMaximized():
+                self.showNormal()
+            else:
+                self.showMaximized()
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
