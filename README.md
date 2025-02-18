@@ -1,19 +1,18 @@
 # WebApps Creator
-WebApps Creator es una aplicación para GNU/Linux que te permite crear fácilmente accesos directos .desktop para tus aplicaciones web. Con esta herramienta, puedes convertir tus sitios web favoritos en aplicaciones de escritorio con tan solo unos clics.
+WebApps Creator is an application for GNU/Linux that allows you to easily create .desktop shortcuts for your web applications. With this tool, you can convert your favorite websites into desktop applications with just a few clicks.
 
-¿Por que no esta firefox, midori, falkon?, Lea esto: <a href="#user-content-first-heading" id="first-heading">https://github.com/krafairus/webapps-creator-ui/issues/1</a>
+Why isn't Firefox, Midori, Falkon included? Read this: <a href="#user-content-first-heading" id="first-heading">https://github.com/krafairus/webapps-creator-ui/issues/1</a>
 
-![imagen](https://github.com/user-attachments/assets/cb2207b7-814a-44b6-8301-a7b00408683c)
+![image](https://github.com/user-attachments/assets/cb2207b7-814a-44b6-8301-a7b00408683c)
 
-Características destacadas:
+Key features:
 
-1. Creación sencilla de accesos directos: WebApps Creator simplifica el proceso de convertir tus aplicaciones web en accesos directos de escritorio. Solo necesitas proporcionar la URL de tu sitio web y configurar algunas opciones adicionales, como el nombre de la aplicación, el ícono , la categoria, y las preferencias de ejecución.
+1. Easy shortcut creation: WebApps Creator simplifies the process of converting your web applications into desktop shortcuts. You just need to provide the URL of your website and configure some additional options, such as the application name, icon, category, and execution preferences.
 
-2. Personalización de íconos: Puedes elegir entre una amplia variedad de íconos predefinidos o incluso cargar tus propias imágenes para representar tus aplicaciones web. Esto te permite personalizar y darle un toque único a cada acceso directo de escritorio que crees.
+2. Icon customization: You can choose from a wide variety of predefined icons or even upload your own images to represent your web applications. This allows you to customize and give a unique touch to each desktop shortcut you create.
 
-3. Organización y accesibilidad mejoradas: Al crear accesos directos .desktop, puedes organizar tus aplicaciones web favoritas de manera más eficiente en tu escritorio o menú de aplicaciones. Esto facilita el acceso rápido a tus sitios web preferidos sin tener que abrir el navegador y buscarlos manualmente, y tambien ya puedes usar un navegador integrado que te permite no depender de usar un navegador como googlo chrome, opera o otro, sentiras que estas en una app y no en una web.
+3. Improved organization and accessibility: By creating .desktop shortcuts, you can organize your favorite web applications more efficiently on your desktop or application menu. This makes it easier to quickly access your preferred websites without having to open the browser and search for them manually, and you can also use an integrated browser that allows you to not rely on using a browser like Google Chrome, Opera, or another, making it feel like you're in an app and not on a web page.
 
-4. Compatibilidad con diferentes entornos de escritorio: WebApps Creator es compatible con una amplia variedad de entornos de escritorio en GNU/Linux, incluyendo GNOME, KDE, XFCE y muchos más. Esto garantiza que puedas disfrutar de tus accesos directos de escritorio sin importar el entorno que prefieras.
+4. Compatibility with different desktop environments: WebApps Creator is compatible with a wide variety of desktop environments on GNU/Linux, including GNOME, KDE, XFCE, and many more. This ensures that you can enjoy your desktop shortcuts regardless of the environment you prefer.
 
-
-Creado por krafairus - Equipo deepines. Bajo la licencia MIT.
+Created by krafairus - Deepin team. Under the MIT license.
