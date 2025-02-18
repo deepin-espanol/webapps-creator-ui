@@ -10,7 +10,7 @@ Standards-Version: 4.5.0
 Homepage: https://github.com/deepin-espanol/webapps-creator-ui
 
 Package: webapps-creator-ui
-Architecture: all
+Architecture: amd64
 Depends:
   python3-pyqt5,
   python3-pyqt5.qtwebengine,

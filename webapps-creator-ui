@@ -26,14 +26,27 @@ fi
 
 distribucion=$(lsb_release -s --d)
 
-script_path="/usr/bin/webapps-creator-ui/webapps-creator-ui.py"
+script_path="/usr/share/webapps-creator-ui/webapps-creator-ui.py"
+config_dir="$HOME/.webapps-creator-ui"
+config_file="$config_dir/write.json"
 
+# Crear el directorio de configuración si no existe
+mkdir -p "$config_dir"
+
+# Verificar si el cambio ya se aplicó
 if [[ "$distribucion" == "Deepin 23" ]]; then
-    echo "Asignando solución para Deepin 23"
-    ask_password 
-    echo "$password" | sudo -S sed -i 's/config\.write(desktop_file)/config\.write(desktop_file, space_around_delimiters=False)/' "$script_path"
+    if [ -f "$config_file" ] && grep -q '"change_applied": true' "$config_file"; then
+        echo "El cambio ya se aplicó previamente."
+    else
+        echo "Asignando solución para Deepin 23"
+        ask_password 
+        echo "$password" | sudo -S sed -i 's/config\.write(desktop_file)/config\.write(desktop_file, space_around_delimiters=False)/' "$script_path"
+        
+        # Actualizar el archivo write.json para indicar que el cambio se aplicó
+        echo '{"change_applied": true}' > "$config_file"
+    fi
 fi
 
-python3 "$script_path"
+/usr/share/webapps-creator-ui/webapps-creator-ui.py
 
 exit 0

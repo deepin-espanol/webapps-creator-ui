@@ -27,14 +27,18 @@ install: build
 	dh_installdirs
 
 	# Add here commands to install the package into webapps-creator-ui.
-	install -d $(DESTDIR)/usr/bin/webapps-creator-ui
-	install -m 755 webapps-creator-ui $(DESTDIR)/usr/bin/webapps-creator-ui/
-	install -m 755 webapps-creator-ui-wb.py $(DESTDIR)/usr/bin/webapps-creator-ui/
-	install -m 755 webapps-creator-ui.py $(DESTDIR)/usr/bin/webapps-creator-ui/
-	install -d $(DESTDIR)/usr/bin/webapps-creator-ui/languages
-	install -m 644 languages/lg_*.qm $(DESTDIR)/usr/bin/webapps-creator-ui/languages/
-	install -d $(DESTDIR)/usr/bin/webapps-creator-ui/icons
-	install -m 644 data/icons/*.png $(DESTDIR)/usr/bin/webapps-creator-ui/icons/
+	install -d $(DESTDIR)/usr/bin
+	install -m 755 webapps-creator-ui $(DESTDIR)/usr/bin/
+	install -d $(DESTDIR)/usr/share/webapps-creator-ui
+	install -m 755 webapps-creator-ui-wb.py $(DESTDIR)/usr/share/webapps-creator-ui/
+	install -d $(DESTDIR)/usr/share/webapps-creator-ui
+	install -m 755 webapps-creator-ui.py $(DESTDIR)/usr/share/webapps-creator-ui/
+	install -d $(DESTDIR)/usr/share/webapps-creator-ui
+	install -m 755 checkbrowsers.py $(DESTDIR)/usr/share/webapps-creator-ui/
+	install -d $(DESTDIR)/usr/share/webapps-creator-ui/languages
+	install -m 644 languages/lg_*.qm $(DESTDIR)/usr/share/webapps-creator-ui/languages/
+	install -d $(DESTDIR)/usr/share/webapps-creator-ui/icons
+	install -m 644 data/icons/*.png $(DESTDIR)/usr/share/webapps-creator-ui/icons/
 	install -d $(DESTDIR)/usr/share/applications
 	install -m 644 data/webapps-creator-ui.desktop $(DESTDIR)/usr/share/applications/
 	install -d $(DESTDIR)/usr/share/icons/hicolor/scalable/apps
