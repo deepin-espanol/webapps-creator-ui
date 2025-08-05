@@ -512,8 +512,8 @@ class WebAppCreator(QMainWindow):
                 background-color: transparent;
                 color: #BEBEBE;
                 font-size: 16px;
-                border: none; /* Eliminar borde */
-                border-radius: 0px; /* Eliminar bordes redondeados */
+                border: none; 
+                border-radius: 0px; 
             }
             QPushButton:hover {
                 background-color: #4A4A4A;
@@ -531,8 +531,8 @@ class WebAppCreator(QMainWindow):
                 background-color: transparent;
                 color: #BEBEBE;
                 font-size: 16px;
-                border: none; /* Eliminar borde */
-                border-radius: 0px; /* Eliminar bordes redondeados */
+                border: none; 
+                border-radius: 0px; 
             }
             QPushButton:hover {
                 background-color: #4A4A4A;
@@ -554,7 +554,6 @@ class WebAppCreator(QMainWindow):
         self.setMenuWidget(self.title_bar)
 
     def get_stylesheet(self):
-        """Devuelve una hoja de estilo QSS que imita el estilo Deepin."""
         return """
             QMainWindow {
                 background-color: #252525;
@@ -885,7 +884,7 @@ class WebAppCreator(QMainWindow):
         text_browser.setOpenExternalLinks(True)
 
         about_text = self.tr(
-            "Webapps Creator UI v1.5.4\n"
+            "Webapps Creator UI v1.5.5\n"
             "Desarrollado por krafairus - Equipo Deepines\n"
             "Más información en:\n"
             "https://github.com/deepin-espanol/webapps-creator-ui"

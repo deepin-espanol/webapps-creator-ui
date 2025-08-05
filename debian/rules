@@ -42,7 +42,7 @@ install: build
 	install -d $(DESTDIR)/usr/share/applications
 	install -m 644 data/webapps-creator-ui.desktop $(DESTDIR)/usr/share/applications/
 	install -d $(DESTDIR)/usr/share/icons/hicolor/scalable/apps
-	install -m 644 data/webapps-creator-ui.svg $(DESTDIR)/usr/share/icons/hicolor/scalable/apps/
+	install -m 644 data/webapps-creator-ui.png $(DESTDIR)/usr/share/icons/hicolor/scalable/apps/
 
 # Build architecture-independent files here.
 binary-indep: build install

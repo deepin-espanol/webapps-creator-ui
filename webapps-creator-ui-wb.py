@@ -5,7 +5,7 @@ import sys
 import os
 import json
 from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget, QVBoxLayout, QPushButton, QFileDialog, QMessageBox, QListWidget, QDialog, QHBoxLayout
-from PyQt5.QtWebEngineWidgets import QWebEngineView
+from PyQt5.QtWebEngineWidgets import QWebEngineView, QWebEngineProfile
 from PyQt5.QtGui import QIcon, QColor, QPainter
 from PyQt5.QtCore import QUrl, Qt, QSize
 from PyQt5.QtDBus import QDBusInterface
@@ -28,6 +28,10 @@ class SimpleBrowser(QMainWindow):
         layout = QVBoxLayout()
 
         self.browser = QWebEngineView()
+
+        profile = self.browser.page().profile()
+        user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.7103.48 Safari/537.36"
+        profile.setHttpUserAgent(user_agent)
 
         if self.icon_path:
             self.setWindowIcon(QIcon(self.icon_path))
